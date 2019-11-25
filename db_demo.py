@@ -2,6 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
+from sqlalchemy import func
+
 
 class Config:
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://zhouyajun:12345678@localhost:3306/toutiao"
@@ -98,7 +100,9 @@ class Relation(db.Model):
 
 # from db_demo import app,db,User,UserProfile,Relation
 from sqlalchemy.orm import load_only
+
 @app.route('/')
 def hello():
 
+    db.session.query(Relation.user_id, func.count(Relation.target_user_id)).group_by(Relation.user_id).all()
     return 'ok'

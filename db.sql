@@ -50,3 +50,16 @@ CREATE TABLE `user_relation` (
   PRIMARY KEY (`relation_id`),
   UNIQUE KEY `user_target` (`user_id`, `target_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户关系表';
+
+INSERT INTO toutiao.user_profile (user_id, gender, birthday, real_name, id_number, id_card_front, id_card_back, id_card_handheld, create_time, update_time, register_media_time, area, company, career) VALUES (1, 0, null, 'zhouyajun', null, null, null, null, '2019-11-25 14:18:59', '2019-11-25 14:18:59', null, null, null, null);
+INSERT INTO toutiao.user_profile (user_id, gender, birthday, real_name, id_number, id_card_front, id_card_back, id_card_handheld, create_time, update_time, register_media_time, area, company, career) VALUES (2, 1, null, 'jinwenjun', null, null, null, null, '2019-11-25 14:19:33', '2019-11-25 14:19:33', null, null, null, null);
+
+INSERT INTO toutiao.user_basic (user_id, account, email, status, mobile, password, user_name, profile_photo, last_login, is_media, is_verified, introduction, certificate, article_count, following_count, fans_count, like_count, read_count) VALUES (1, null, null, 1, '13612345678', null, 'itcast', null, null, 0, 0, null, null, 0, 0, 0, 0, 0);
+INSERT INTO toutiao.user_basic (user_id, account, email, status, mobile, password, user_name, profile_photo, last_login, is_media, is_verified, introduction, certificate, article_count, following_count, fans_count, like_count, read_count) VALUES (2, null, null, 1, '13912341233', null, '张三', null, null, 0, 0, null, null, 0, 0, 0, 0, 0);
+INSERT INTO toutiao.user_basic (user_id, account, email, status, mobile, password, user_name, profile_photo, last_login, is_media, is_verified, introduction, certificate, article_count, following_count, fans_count, like_count, read_count) VALUES (4, null, null, 1, '18872554923', null, 'itcast张三', null, null, 0, 0, null, null, 0, 0, 0, 0, 0);
+INSERT INTO toutiao.user_basic (user_id, account, email, status, mobile, password, user_name, profile_photo, last_login, is_media, is_verified, introduction, certificate, article_count, following_count, fans_count, like_count, read_count) VALUES (5, null, null, 1, '16672554923', null, 'itcast张三张三', null, null, 0, 0, null, null, 0, 0, 0, 0, 0);
+
+
+INSERT INTO toutiao.user_relation (relation_id, user_id, target_user_id, relation, create_time, update_time) VALUES (1, 1, 2, 1, '2019-11-25 14:04:14', '2019-11-25 14:04:14');
+INSERT INTO toutiao.user_relation (relation_id, user_id, target_user_id, relation, create_time, update_time) VALUES (2, 1, 4, 1, '2019-11-25 14:04:51', '2019-11-25 14:04:51');
+INSERT INTO toutiao.user_relation (relation_id, user_id, target_user_id, relation, create_time, update_time) VALUES (3, 1, 5, 1, '2019-11-25 14:05:22', '2019-11-25 14:05:22');
